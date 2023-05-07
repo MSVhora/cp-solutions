@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkcp_solutions=self.webpackChunkcp_solutions||[]).push([[56],{7037:t=>{t.exports=JSON.parse('{"title":"Patterns","description":"Learn all pattern concepts.","slug":"/category/patterns","permalink":"/docs/category/patterns","navigation":{"next":{"title":"Pattern 1","permalink":"/docs/patterns/pattern-1"}}}')}}]);

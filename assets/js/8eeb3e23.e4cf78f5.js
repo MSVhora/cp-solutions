@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkcp_solutions=self.webpackChunkcp_solutions||[]).push([[876],{2661:t=>{t.exports=JSON.parse('{"label":"loops","permalink":"/docs/tags/loops","allTagsPath":"/docs/tags","count":1,"items":[{"id":"patterns/pattern-1","title":"Pattern 1","description":"Print given * pattern.","permalink":"/docs/patterns/pattern-1"}]}')}}]);

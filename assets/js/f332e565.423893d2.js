@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcp_solutions=self.webpackChunkcp_solutions||[]).push([[803],{8772:o=>{o.exports=JSON.parse('{"permalink":"/cp-solutions/blog","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);
