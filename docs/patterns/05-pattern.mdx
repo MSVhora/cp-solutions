@@ -1,0 +1,89 @@
+---
+id: "pattern-5"
+title: "Pattern 5"
+description: "Print given * pattern."
+tags: [patterns, loops]
+---
+
+
+
+# Pattern 5
+
+## Problem Link
+
+https://github.com/kunal-kushwaha/DSA-Bootcamp-Java/blob/main/assignments/09-patterns.md
+
+## Problem Statement
+
+Print the given patterns
+
+```text
+
+*
+**
+***
+****
+*****
+****
+***
+**
+*
+
+```
+## Approach
+
+- In the given pattern as we can see there are `2n -1` rows and `n` columns.
+- In the given pattern, we can see, each row prints `rowIndex` number of columns till `n` and after `n` it print `2n - rowIndex` number of columns.
+
+<TableWrapper rows="(2n - 1) = 9" cols="5">
+
+|       	| **1** 	| **2** 	| **3** 	| **4** 	| **5** 	|
+|:-----:	|:-----:	|:-----:	|:-----:	|:-----:	|:-----:	|
+| **1** 	|   *   	|       	|       	|       	|       	|
+| **2** 	|   *   	|   *   	|       	|       	|       	|
+| **3** 	|   *   	|   *   	|   *   	|       	|       	|
+| **4** 	|   *   	|   *   	|   *   	|   *   	|       	|
+| **5** 	|   *   	|   *   	|   *   	|   *   	|   *   	|
+| **6** 	|   *   	|   *   	|   *   	|   *   	|       	|
+| **7** 	|   *   	|   *   	|   *   	|       	|       	|
+| **8** 	|   *   	|   *   	|       	|       	|       	|
+| **9** 	|   *   	|       	|       	|       	|       	|
+
+</TableWrapper>
+
+- Check for spaces, print them if needed
+- Print the given character
+
+<Tabs>
+<TabItem value="kotlin" label="Kotlin">
+<SolutionAuthor name="@msvhora"/>
+
+```kt
+fun pattern5(n: Int) {
+    for(row in 1..(n + n - 1)) {
+		val noOfCols = if(row <= n) row else (n + n - row)
+        print("*".repeat(noOfCols))
+        println()
+    }
+}
+
+fun main() {	
+    pattern5(5)
+}
+```
+</TabItem>
+</Tabs>
+
+## Output
+
+```kt
+*
+**
+***
+****
+*****
+****
+***
+**
+*
+```
