@@ -1,0 +1,63 @@
+---
+id: "pattern-1"
+title: "Pattern 1"
+description: "Print given * pattern."
+tags: [patterns, loops]
+---
+
+
+# Pattern 1
+
+## Problem Link
+
+https://github.com/kunal-kushwaha/DSA-Bootcamp-Java/blob/main/assignments/09-patterns.md
+
+## Problem Statement
+
+Print the given patterns
+
+```text
+
+*****
+*****
+*****
+*****
+*****
+
+```
+## Approach
+
+- Find how many rows are there and how they are printed, that will define the outer loop
+- Find how columns are printed, that will define the inner loop
+- Check for spaces, print them if needed
+- Print the given character
+
+<Tabs>
+<TabItem value="kotlin" label="Kotlin">
+<SolutionAuthor name="@msvhora"/>
+
+```kt
+fun pattern1(n: Int) {
+    for(row in 1..n) {
+		val noOfCols = n
+        print("*".repeat(noOfCols))
+        println()
+    }
+}
+
+fun main() {	
+    pattern1(5)
+}
+```
+</TabItem>
+</Tabs>
+
+## Output
+
+```kt
+*****
+*****
+*****
+*****
+*****
+```
