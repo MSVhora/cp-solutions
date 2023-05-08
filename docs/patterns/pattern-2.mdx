@@ -1,12 +1,13 @@
 ---
-id: "pattern-1"
-title: "Pattern 1"
+id: "pattern-2"
+title: "Pattern 2"
 description: "Print given * pattern."
 tags: [patterns, loops]
 ---
 
 
-# Pattern 1
+
+# Pattern 2
 
 ## Problem Link
 
@@ -18,17 +19,26 @@ Print the given patterns
 
 ```text
 
-*****
-*****
-*****
-*****
+*
+**
+***
+****
 *****
 
 ```
 ## Approach
 
 - Find how many rows are there and how they are printed, that will define the outer loop
-- Find how columns are printed, that will define the inner loop
+- Find how many columns are there, and how they are printed.
+- In the given pattern, we can see, each row prints columns equal to row Index.
+```kt
+     1   2   3   4   5
+1    *
+2    *   *
+3    *   *   *
+4    *   *   *   *
+5    *   *   *   *   *
+```
 - Check for spaces, print them if needed
 - Print the given character
 
@@ -37,16 +47,16 @@ Print the given patterns
 <SolutionAuthor name="@msvhora"/>
 
 ```kt
-fun pattern1(n: Int) {
+fun pattern2(n: Int) {
     for(row in 1..n) {
-		val noOfCols = n
+		val noOfCols = row
         print("*".repeat(noOfCols))
         println()
     }
 }
 
 fun main() {	
-    pattern1(5)
+    pattern2(5)
 }
 ```
 </TabItem>
@@ -55,9 +65,9 @@ fun main() {
 ## Output
 
 ```kt
-*****
-*****
-*****
-*****
+*
+**
+***
+****
 *****
 ```
