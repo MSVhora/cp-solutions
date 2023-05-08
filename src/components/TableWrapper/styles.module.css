@@ -1,0 +1,25 @@
+.wrapper {
+	width: fit-content;
+}
+
+.mainRowWrapper {
+	display: flex;
+
+}
+
+.colWrapper {
+	text-align: center;
+	background-color: var(--ifm-tabs-color-active);
+	color: #ffffff;
+	border: var(--ifm-table-border-width) solid var(--ifm-table-border-color);
+}
+
+.rowWrapper {
+	text-align: center;
+	background-color: var(--ifm-tabs-color-active);
+	color: #ffffff;
+	transform: rotate(180deg);
+	writing-mode: vertical-rl;
+	margin-bottom: var(--ifm-spacing-vertical);
+	border: var(--ifm-table-border-width) solid var(--ifm-table-border-color);
+}
