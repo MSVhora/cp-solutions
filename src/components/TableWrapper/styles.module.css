@@ -4,10 +4,11 @@
 
 .mainRowWrapper {
 	display: flex;
-
 }
 
 .colWrapper {
+	font-weight: bold;
+	letter-spacing: 0.25em;
 	text-align: center;
 	background-color: var(--ifm-tabs-color-active);
 	color: #ffffff;
@@ -15,6 +16,8 @@
 }
 
 .rowWrapper {
+	font-weight: bold;
+	letter-spacing: 0.25em;
 	text-align: center;
 	background-color: var(--ifm-tabs-color-active);
 	color: #ffffff;
@@ -22,4 +25,21 @@
 	writing-mode: vertical-rl;
 	margin-bottom: var(--ifm-spacing-vertical);
 	border: var(--ifm-table-border-width) solid var(--ifm-table-border-color);
+}
+
+thead tr:first-child {
+	background-color: var(--ifm-tabs-color-active);
+	color: #ffffff;
+}
+
+td:first-child {
+	background-color: var(--ifm-tabs-color-active);
+	color: #ffffff;
+}
+
+td,
+th {
+	width: 50px;
+	height: 50px;
+	font-weight: normal !important;
 }
