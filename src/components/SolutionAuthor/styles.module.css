@@ -1,0 +1,5 @@
+.wrapper {
+	text-align: center;
+	background-color: var(--ifm-tabs-color-active);
+	color: #ffffff;
+}
