@@ -69,9 +69,9 @@ const config = {
         items: [
           {
             type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
+            sidebarId: 'patternsSidebar',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Patterns',
           },
           {
             href: 'https://github.com/MSVhora/cp-solutions',
@@ -87,7 +87,7 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
+                label: 'Patterns',
                 to: '/docs/category/patterns',
               },
             ],
