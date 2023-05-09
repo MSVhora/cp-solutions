@@ -1,0 +1,104 @@
+---
+id: "pattern-23"
+title: "Pattern 23"
+description: "Print given * pattern."
+tags: [patterns, loops]
+---
+
+
+
+# Pattern 23
+
+## Problem Link
+
+https://github.com/kunal-kushwaha/DSA-Bootcamp-Java/blob/main/assignments/09-patterns.md
+
+## Problem Statement
+
+Print the given pattern.
+
+```text
+
+   *     *
+  * *   * *
+ *   * *   *
+*     *     *
+
+```
+## Approach
+
+- In the given pattern, we can see there are **n** rows and **4n - 3** columns.
+- We have to print starting spaces i.e. **n - rowIndex** number of spaces for each row
+- Then we have to print hollow pyramid pattern, for that we will traverse from **1** to **2 * rowIndex - 1** and print **\*** on edges only else space.
+- We have print middle space using **2 * (n - rowIndex) - 1**
+- We will repeat the hollow pyramid to complete the pattern.
+- Note: Take care of last row to not include double edges on last rowIndex.
+
+<TableWrapper rows="4" cols="4n - 3 = 13">
+
+|   	| 1 	| 2 	| 3 	| 4 	| 5 	| 6 	| 7 	| 8 	| 9 	| 10 	| 11 	| 12 	| 13 	|
+|:-:	|:-:	|:-:	|:-:	|:-:	|:-:	|:-:	|:-:	|:-:	|:-:	|:--:	|:--:	|:--:	|:--:	|
+| 1 	|   	|   	|   	| * 	|   	|   	|   	|   	|   	|  * 	|    	|    	|    	|
+| 2 	|   	|   	| * 	|   	| * 	|   	|   	|   	| * 	|    	|  * 	|    	|    	|
+| 3 	|   	| * 	|   	|   	|   	| * 	|   	| * 	|   	|    	|    	|  * 	|    	|
+| 4 	| * 	|   	|   	|   	|   	|   	| * 	|   	|   	|    	|    	|    	|  * 	|
+
+</TableWrapper>
+
+<Tabs>
+<TabItem value="kotlin" label="Kotlin">
+<SolutionAuthor name="@msvhora"/>
+
+```kt
+fun pattern23(n: Int) {
+    for(rowIndex in 1..n) {
+        val noOfCols = 2 * rowIndex - 1
+        val noOfSpaces = n - rowIndex
+        
+        // Print starting spaces
+        print(" ".repeat(noOfSpaces))
+
+        // print first wave character
+        for(colIndex in 1..noOfCols) {
+            if(colIndex == 1 || colIndex == noOfCols)
+                print("*")
+            else
+                print(" ")
+        }
+
+        if(rowIndex != n) {
+            // Print middle spaces
+            print(" ".repeat(2 * noOfSpaces - 1))
+
+            // print first wave character
+            for(colIndex in 1..noOfCols) {
+                if(colIndex == 1 || colIndex == noOfCols)
+                    print("*")
+                else
+                    print(" ")
+            }
+        } else {
+            print(" ".repeat(2 * n - 3))
+            print("*")
+        }
+        println()
+    }
+}
+
+fun main() {	
+    pattern23(4)
+}
+```
+</TabItem>
+</Tabs>
+
+## Output
+
+```kt
+
+   *     *
+  * *   * *
+ *   * *   *
+*     *     *
+
+```
