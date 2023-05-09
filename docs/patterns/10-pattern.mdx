@@ -1,0 +1,80 @@
+---
+id: "pattern-10"
+title: "Pattern 10"
+description: "Print given * pattern."
+tags: [patterns, loops]
+---
+
+
+
+# Pattern 10
+
+## Problem Link
+
+https://github.com/kunal-kushwaha/DSA-Bootcamp-Java/blob/main/assignments/09-patterns.md
+
+## Problem Statement
+
+Print the given patterns
+
+```text
+
+    * 
+   * * 
+  * * * 
+ * * * * 
+* * * * * 
+
+```
+## Approach
+
+- In the given pattern, we can see there are **n** rows and **n** columns.
+- We have to print some spaces before printing the **\*** characters.
+- As we can see we have to print **n - rowIndex** number of spaces and **rowIndex** number of columns. 
+- We also have to print an extra space between character, so while printing character we will print a space as well.
+
+<TableWrapper rows="5" cols="5">
+
+|   	| 1 	| 2 	| 3 	| 4 	| 5 	| 6 	| 7 	| 8 	| 9 	|
+|:-:	|:-:	|:-:	|:-:	|:-:	|:-:	|:-:	|:-:	|:-:	|:-:	|
+| 1 	|   	|   	|   	|   	| * 	|   	|   	|   	|   	|
+| 2 	|   	|   	|   	| * 	|   	| * 	|   	|   	|   	|
+| 3 	|   	|   	| * 	|   	| * 	|   	| * 	|   	|   	|
+| 4 	|   	| * 	|   	| * 	|   	| * 	|   	| * 	|   	|
+| 5 	| * 	|   	| * 	|   	| * 	|   	| * 	|   	| * 	|
+
+</TableWrapper>
+
+<Tabs>
+<TabItem value="kotlin" label="Kotlin">
+<SolutionAuthor name="@msvhora"/>
+
+```kt
+fun pattern10(n: Int) {
+    for(rowIndex in 1..n) {
+		val noOfCols = rowIndex
+        val noOfSpaces = (n - rowIndex)
+        print(" ".repeat(noOfSpaces))
+        print("* ".repeat(noOfCols))
+        println()
+    }
+}
+
+fun main() {	
+    pattern10(5)
+}
+```
+</TabItem>
+</Tabs>
+
+## Output
+
+```kt
+
+    * 
+   * * 
+  * * * 
+ * * * * 
+* * * * * 
+
+```
