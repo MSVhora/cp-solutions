@@ -1,0 +1,86 @@
+---
+id: "pattern-25"
+title: "Pattern 25"
+description: "Print given * pattern."
+tags: [patterns, loops]
+---
+
+
+
+# Pattern 25
+
+## Problem Link
+
+https://github.com/kunal-kushwaha/DSA-Bootcamp-Java/blob/main/assignments/09-patterns.md
+
+## Problem Statement
+
+Print the given pattern.
+
+```text
+
+    *****
+   *   *
+  *   *
+ *   *
+*****
+
+```
+## Approach
+
+- In the given pattern, we can see there are **n** rows and **2n - 1** columns.
+- We have to print some spaces before printing the **\*** characters.
+- For starting spaces, we need to print n - rowIndex number of spaces;
+- For rowIndex == 1 or rowIndex == n, print **\*** in every column.
+- For every other row print **\***, **n - 2** number of spaces, and **\***
+
+
+<TableWrapper rows="5" cols="2n - 1 = 9">
+
+|   	| 1 	| 2 	| 3 	| 4 	| 5 	| 6 	| 7 	| 8 	| 9 	|
+|:-:	|:-:	|:-:	|:-:	|:-:	|:-:	|:-:	|:-:	|:-:	|:-:	|
+| 1 	|   	|   	|   	|   	| * 	| * 	| * 	| * 	| * 	|
+| 2 	|   	|   	|   	| * 	|   	|   	|   	| * 	|   	|
+| 3 	|   	|   	| * 	|   	|   	|   	| * 	|   	|   	|
+| 4 	|   	| * 	|   	|   	|   	| * 	|   	|   	|   	|
+| 5 	| * 	| * 	| * 	| * 	| * 	|   	|   	|   	|   	|
+
+</TableWrapper>
+
+<Tabs>
+<TabItem value="kotlin" label="Kotlin">
+<SolutionAuthor name="@msvhora"/>
+
+```kt
+fun pattern25(n: Int) {
+    for(rowIndex in 1..n) {
+        // Starting spaces
+        print(" ".repeat(n - rowIndex))
+        
+        val noOfSpaces = n - 2
+        print("*")
+        print((if(rowIndex == 1 || rowIndex == n) "*" else " ").repeat(noOfSpaces))
+        print("*")
+        println()
+    }
+}
+
+
+fun main() {	
+    pattern25(5)
+}
+```
+</TabItem>
+</Tabs>
+
+## Output
+
+```kt
+
+    *****
+   *   *
+  *   *
+ *   *
+*****
+
+```
