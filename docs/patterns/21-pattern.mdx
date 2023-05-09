@@ -1,0 +1,84 @@
+---
+id: "pattern-21"
+title: "Pattern 21"
+description: "Print given number pattern."
+tags: [patterns, loops]
+---
+
+
+
+# Pattern 21
+
+## Problem Link
+
+https://github.com/kunal-kushwaha/DSA-Bootcamp-Java/blob/main/assignments/09-patterns.md
+
+## Problem Statement
+
+Print the given pattern.
+
+```text
+
+1  
+2  3  
+4  5  6  
+7  8  9  10 
+11 12 13 14 15 
+
+```
+## Approach
+
+- In the given pattern, we can see there are **n** rows and **n** columns.
+- We have to print values from 1 to **n * (n + 1) / 2**
+- From table, we can see we have to print **rowIndex** number of columns in each row
+
+<TableWrapper rows="5" cols="5">
+
+|   	|  1 	|  2 	|  3 	|  4 	|  5 	|
+|:-:	|:--:	|:--:	|:--:	|:--:	|:--:	|
+| 1 	|  1 	|    	|    	|    	|    	|
+| 2 	|  2 	|  3 	|    	|    	|    	|
+| 3 	|  4 	|  5 	|  6 	|    	|    	|
+| 4 	|  7 	|  8 	|  9 	| 10 	|    	|
+| 5 	| 11 	| 12 	| 13 	| 14 	| 15 	|
+
+</TableWrapper>
+
+<Tabs>
+<TabItem value="kotlin" label="Kotlin">
+<SolutionAuthor name="@msvhora"/>
+
+```kt
+fun pattern21(n: Int) {
+    var value = 1
+    val maxLength = (n * (n + 1) / 2).toString().length + 1
+    for(rowIndex in 1..n) {
+        for (col in 1..rowIndex) {
+            // only work for 2 digit numbers
+            val noOfSpaces = maxLength - value.toString().length
+            print("${value++}")
+            print(" ".repeat(noOfSpaces))
+            
+        }
+        println()
+    }
+}
+
+fun main() {	
+    pattern21(5)
+}
+```
+</TabItem>
+</Tabs>
+
+## Output
+
+```kt
+
+1  
+2  3  
+4  5  6  
+7  8  9  10 
+11 12 13 14 15 
+
+```
