@@ -30,7 +30,7 @@ Print the given patterns
 
 - Find how many rows are there and how they are printed, that will define the outer loop
 - Find how many columns are there, and how they are printed.
-- In the given pattern, we can see, each row prints `n - row + 1` number of columns.
+- In the given pattern, we can see, each row prints **n - rowIndex + 1** number of columns.
 
 <TableWrapper rows="5" cols="5">
 
@@ -53,8 +53,8 @@ Print the given patterns
 
 ```kt
 fun pattern3(n: Int) {
-    for(row in 1..n) {
-		val noOfCols = n - row + 1
+    for(rowIndex in 1..n) {
+		val noOfCols = n - rowIndex + 1
         print("*".repeat(noOfCols))
         println()
     }

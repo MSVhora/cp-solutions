@@ -27,10 +27,10 @@ Print the given patterns
 ```
 ## Approach
 
-- In the given pattern, we can see there are `n` rows and `n` columns.
-- We have to print some spaces before printing the `*` characters.
-- As we can see we have print `n - rowIndex` number of spaces and `rowIndex` number of columns 
-- For example: for `rowIndex = 3`, we can see we have to print `2` spaces and `3` columns. 
+- In the given pattern, we can see there are **n** rows and **n** columns.
+- We have to print some spaces before printing the **\*** characters.
+- As we can see we have to print **n - rowIndex** number of spaces and **rowIndex** number of columns 
+- For example: for **rowIndex = 3**, we can see we have to print **2** spaces and **3** columns. 
 ```kt
 noOfSpaces = n - rowIndex = 5 - 3 = 2
 noOfCols = rowIndex = 3
@@ -55,9 +55,9 @@ noOfCols = rowIndex = 3
 
 ```kt
 fun pattern6(n: Int) {
-    for(row in 1..n) {
-		val noOfCols = row
-        val noOfSpaces = (n - row)
+    for(rowIndex in 1..n) {
+		val noOfCols = rowIndex
+        val noOfSpaces = n - rowIndex
         print(" ".repeat(noOfSpaces))
         print("*".repeat(noOfCols))
         println()

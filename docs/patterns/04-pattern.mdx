@@ -30,7 +30,7 @@ Print the given patterns
 
 - Find how many rows are there and how they are printed, that will define the outer loop
 - Find how many columns are there, and how they are printed.
-- In the given pattern, we can see, each row prints `rowIndex` number of columns with value `colIndex`.
+- In the given pattern, we can see, each row prints **rowIndex** number of columns with value **colIndex**.
 
 <TableWrapper rows="5" cols="5">
 
@@ -52,9 +52,9 @@ Print the given patterns
 
 ```kt
 fun pattern4(n: Int) {
-    for(row in 1..n) {
-        for (col in 1..row) {
-            print("$col ")
+    for(rowIndex in 1..n) {
+        for (colIndex in 1..rowIndex) {
+            print("$colIndex ")
         }
         println()
     }

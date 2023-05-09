@@ -28,10 +28,10 @@ Print the given patterns
 ```
 ## Approach
 
-- In the given pattern, we can see there are `n` rows and `n` columns.
-- We have to print some spaces before printing the `*` characters.
-- As we can see we have print `rowIndex - 1` number of spaces and `n - rowIndex + 1` number of columns 
-- For example: for `rowIndex = 2`, we can see we have to print `1` spaces and `4` columns. 
+- In the given pattern, we can see there are **n** rows and **n** columns.
+- We have to print some spaces before printing the **\*** characters.
+- As we can see we have to print **rowIndex - 1** number of spaces and **n - rowIndex + 1** number of columns 
+- For example: for **rowIndex = 2**, we can see we have to print **1** spaces and **4** columns. 
 ```kt
 noOfSpaces = rowIndex - 1 = 2 - 1 = 1
 noOfCols = n - rowIndex + 1 = 5 - 2 + 1 = 4
@@ -49,18 +49,15 @@ noOfCols = n - rowIndex + 1 = 5 - 2 + 1 = 4
 
 </TableWrapper>
 
-- Check for spaces, print them if needed
-- Print the given character
-
 <Tabs>
 <TabItem value="kotlin" label="Kotlin">
 <SolutionAuthor name="@msvhora"/>
 
 ```kt
 fun pattern7(n: Int) {
-    for(row in 1..n) {
-		val noOfCols = n - row + 1
-        val noOfSpaces = row - 1
+    for(rowIndex in 1..n) {
+		val noOfCols = n - rowIndex + 1
+        val noOfSpaces = rowIndex - 1
         print(" ".repeat(noOfSpaces))
         print("*".repeat(noOfCols))
         println()

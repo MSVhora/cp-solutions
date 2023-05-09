@@ -32,8 +32,8 @@ Print the given patterns
 ```
 ## Approach
 
-- In the given pattern as we can see there are `2n -1` rows and `n` columns.
-- In the given pattern, we can see, each row prints `rowIndex` number of columns till `n` and after `n` it print `2n - rowIndex` number of columns.
+- In the given pattern as we can see there are **2n -1** rows and **n** columns.
+- In the given pattern, we can see, each row prints **rowIndex** number of columns till **n** and after **n** it print **2n - rowIndex** number of columns.
 
 <TableWrapper rows="(2n - 1) = 9" cols="5">
 
@@ -60,8 +60,8 @@ Print the given patterns
 
 ```kt
 fun pattern5(n: Int) {
-    for(row in 1..(n + n - 1)) {
-		val noOfCols = if(row <= n) row else (n + n - row)
+    for(rowIndex in 1..(n + n - 1)) {
+		val noOfCols = if(rowIndex <= n) rowIndex else (n + n - rowIndex)
         print("*".repeat(noOfCols))
         println()
     }
