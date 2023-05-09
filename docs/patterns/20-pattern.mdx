@@ -1,0 +1,78 @@
+---
+id: "pattern-20"
+title: "Pattern 20"
+description: "Print given * pattern."
+tags: [patterns, loops]
+---
+
+
+
+# Pattern 20
+
+## Problem Link
+
+https://github.com/kunal-kushwaha/DSA-Bootcamp-Java/blob/main/assignments/09-patterns.md
+
+## Problem Statement
+
+Print the given pattern.
+
+```text
+
+****
+*  *
+*  *
+*  *
+****
+
+```
+## Approach
+
+- In the given pattern, we can see there are **n** rows and **n - 1** columns.
+- For rowIndex == 1 or rowIndex == n, print **\*** in every column.
+- For every other row print **\***, **n - 3** number of spaces, and **\***
+
+<TableWrapper rows="5" cols="4">
+
+|   	| 1 	| 2 	| 3 	| 4 	|
+|:-:	|:-:	|:-:	|:-:	|:-:	|
+| 1 	| * 	| * 	| * 	| * 	|
+| 2 	| * 	|   	|   	| * 	|
+| 3 	| * 	|   	|   	| * 	|
+| 4 	| * 	|   	|   	| * 	|
+| 5 	| * 	| * 	| * 	| * 	|
+</TableWrapper>
+
+<Tabs>
+<TabItem value="kotlin" label="Kotlin">
+<SolutionAuthor name="@msvhora"/>
+
+```kt
+fun pattern20(n: Int) {
+    for(rowIndex in 1..n) {
+        val noOfSpaces = n - 3
+        print("*")
+        print((if(rowIndex == 1 || rowIndex == n) "*" else " ").repeat(noOfSpaces))
+        print("*")
+        println()
+    }
+}
+
+fun main() {	
+    pattern20(5)
+}
+```
+</TabItem>
+</Tabs>
+
+## Output
+
+```kt
+
+****
+*  *
+*  *
+*  *
+****
+
+```
