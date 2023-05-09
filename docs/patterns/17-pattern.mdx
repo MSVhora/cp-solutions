@@ -1,0 +1,100 @@
+---
+id: "pattern-17"
+title: "Pattern 17"
+description: "Print given * pattern."
+tags: [patterns, loops]
+---
+
+
+
+# Pattern 17
+
+## Problem Link
+
+https://github.com/kunal-kushwaha/DSA-Bootcamp-Java/blob/main/assignments/09-patterns.md
+
+## Problem Statement
+
+Print the given pattern.
+
+```text
+
+    1
+   212
+  32123
+ 4321234
+543212345
+ 4321234
+  32123
+   212
+    1
+
+```
+## Approach
+
+- In the given pattern, we can see there are **2n - 1** rows and **2n - 1** columns.
+- We have to print some spaces before printing the **\*** characters.
+- We have to print prefix spaces equal to, if **rowIndex <= n** then **n - rowIndex** else **rowIndex - n**.
+- If **rowIndex <= n** then
+  - Print columns from **rowIndex** to **1** and from **2** to **rowIndex**.
+- else
+  - Print columns from **2n - rowIndex** to **1** and from **2** to **2n - rowIndex**.
+
+<TableWrapper rows="2n - 1 = 9" cols="2n - 1 = 9">
+
+|   	| 1 	| 2 	| 3 	| 4 	| 5 	| 6 	| 7 	| 8 	| 9 	|
+|:-:	|:-:	|:-:	|:-:	|:-:	|:-:	|:-:	|:-:	|:-:	|:-:	|
+| 1 	|   	|   	|   	|   	| 1 	|   	|   	|   	|   	|
+| 2 	|   	|   	|   	| 2 	| 1 	| 2 	|   	|   	|   	|
+| 3 	|   	|   	| 3 	| 2 	| 1 	| 2 	| 3 	|   	|   	|
+| 4 	|   	| 4 	| 3 	| 2 	| 1 	| 2 	| 3 	| 4 	|   	|
+| 5 	| 5 	| 4 	| 3 	| 2 	| 1 	| 2 	| 3 	| 4 	| 5 	|
+| 6 	|   	| 4 	| 3 	| 2 	| 1 	| 2 	| 3 	| 4 	|   	|
+| 7 	|   	|   	| 3 	| 2 	| 1 	| 2 	| 3 	|   	|   	|
+| 8 	|   	|   	|   	| 2 	| 1 	| 2 	|   	|   	|   	|
+| 9 	|   	|   	|   	|   	| 1 	|   	|   	|   	|   	|
+</TableWrapper>
+
+<Tabs>
+<TabItem value="kotlin" label="Kotlin">
+<SolutionAuthor name="@msvhora"/>
+
+```kt
+fun pattern17(n: Int) {
+    for(rowIndex in 1..(n + n - 1)) {
+        val noOfCols = if(rowIndex <= n) rowIndex else n + n - rowIndex
+        val noOfSpaces = if(rowIndex <= n) n - rowIndex else rowIndex - n
+        print(" ".repeat(noOfSpaces))
+        for(col in noOfCols downTo 1) {       
+            print("$col")
+        }
+        
+        for(col in 2..noOfCols) {       
+            print("$col")
+        }
+        println()
+    }
+}
+
+fun main() {	
+    pattern17(5)
+}
+```
+</TabItem>
+</Tabs>
+
+## Output
+
+```kt
+
+    1
+   212
+  32123
+ 4321234
+543212345
+ 4321234
+  32123
+   212
+    1
+
+```
