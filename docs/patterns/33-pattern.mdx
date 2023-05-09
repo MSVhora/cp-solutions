@@ -1,0 +1,91 @@
+---
+id: "pattern-33"
+title: "Pattern 33"
+description: "Print given * pattern."
+tags: [patterns, loops]
+---
+
+
+
+# Pattern 33
+
+## Problem Link
+
+https://github.com/kunal-kushwaha/DSA-Bootcamp-Java/blob/main/assignments/09-patterns.md
+
+## Problem Statement
+
+Print the given pattern.
+
+```text
+
+E D C B A 
+D C B A 
+C B A 
+B A 
+A 
+
+```
+## Approach
+
+- In the given pattern, we can see there are **n** rows and **n** columns.
+- From the given pattern, we can deduce another number pattern as shown in below table
+- In the number pattern, we can deduce that on each row, **n - rowIndex + 1** numbers of columns are printed. And value of the columns are traversing from **n - rowIndex** down to **0**
+- On adding the above number with **'A'**, we can get our required pattern
+
+<TableWrapper rows="5" cols="5">
+
+|   	| 1 	| 2 	| 3 	| 4 	| 5 	|
+|:-:	|:-:	|:-:	|:-:	|:-:	|:-:	|
+| 1 	| E 	| D 	| C 	| B 	| A 	|
+| 2 	| D 	| C 	| B 	| A 	|   	|
+| 3 	| C 	| B 	| A 	|   	|   	|
+| 4 	| B 	| A 	|   	|   	|   	|
+| 5 	| A 	|   	|   	|   	|   	|
+
+</TableWrapper>
+
+<TableWrapper rows="5" cols="5">
+
+|   	| 1 	| 2 	| 3 	| 4 	| 5 	|
+|:-:	|:-:	|:-:	|:-:	|:-:	|:-:	|
+| 1 	| 4 	| 3 	| 2 	| 1 	| 0 	|
+| 2 	| 3 	| 2 	| 1 	| 0 	|   	|
+| 3 	| 2 	| 1 	| 0 	|   	|   	|
+| 4 	| 1 	| 0 	|   	|   	|   	|
+| 5 	| 0 	|   	|   	|   	|   	|
+
+</TableWrapper>
+
+<Tabs>
+<TabItem value="kotlin" label="Kotlin">
+<SolutionAuthor name="@msvhora"/>
+
+```kt
+fun pattern33(n: Int) {
+    for(rowIndex in 1..n) {
+        for(colIndex in (n - rowIndex) downTo 0) {
+            print("${'A' + colIndex} ")
+        }
+        println()
+    }
+}
+
+fun main() {	
+    pattern33(5)
+}
+```
+</TabItem>
+</Tabs>
+
+## Output
+
+```kt
+
+E D C B A 
+D C B A 
+C B A 
+B A 
+A 
+
+```
