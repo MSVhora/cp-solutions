@@ -1,0 +1,90 @@
+---
+id: "pattern-30"
+title: "Pattern 30"
+description: "Print given number pattern."
+tags: [patterns, loops]
+---
+
+
+
+# Pattern 30
+
+## Problem Link
+
+https://github.com/kunal-kushwaha/DSA-Bootcamp-Java/blob/main/assignments/09-patterns.md
+
+## Problem Statement
+
+Print the given pattern.
+
+```text
+
+4 4 4 4 4 4 4 
+4 3 3 3 3 3 4 
+4 3 2 2 2 3 4 
+4 3 2 1 2 3 4 
+4 3 2 2 2 3 4 
+4 3 3 3 3 3 4 
+4 4 4 4 4 4 4 
+
+```
+## Approach
+
+- In the given pattern, we can see there are **2n - 1** rows and **2n - 1** columns.
+- We have to find a pattern/formula to find value for each specific index.
+- From table, we can deduce, that **value = (n - minDistance from border + 1)**
+- We also have to print an extra space between numbers, so while printing number we will print a space as well.
+
+<TableWrapper rows="2n - 1 = 7" cols="2n - 1 = 7">
+
+|   	| 1 	| 2 	| 3 	| 4 	| 5 	| 6 	| 7 	|
+|:-:	|:-:	|:-:	|:-:	|:-:	|:-:	|:-:	|:-:	|
+| 1 	| 4 	| 4 	| 4 	| 4 	| 4 	| 4 	| 4 	|
+| 2 	| 4 	| 3 	| 3 	| 3 	| 3 	| 3 	| 4 	|
+| 3 	| 4 	| 3 	| 2 	| 2 	| 2 	| 3 	| 4 	|
+| 4 	| 4 	| 3 	| 2 	| 1 	| 2 	| 3 	| 4 	|
+| 5 	| 4 	| 3 	| 2 	| 2 	| 2 	| 3 	| 4 	|
+| 6 	| 4 	| 3 	| 3 	| 3 	| 3 	| 3 	| 4 	|
+| 7 	| 4 	| 4 	| 4 	| 4 	| 4 	| 4 	| 4 	|
+
+</TableWrapper>
+
+<Tabs>
+<TabItem value="kotlin" label="Kotlin">
+<SolutionAuthor name="@msvhora"/>
+
+```kt
+fun pattern30(n: Int) {
+    for(rowIndex in 1..(n + n - 1)) {
+        for(colIndex in 1..(n + n - 1)) {
+            val leftDistance = colIndex
+            val topDistance = rowIndex
+            val rightDistance = n + n - colIndex
+            val bottomDistance = n + n - rowIndex
+            val maxValue = n - minOf(minOf(leftDistance, rightDistance), topDistance, bottomDistance) + 1
+            print("$maxValue ")
+        }
+        println()
+    }
+}
+
+fun main() {	
+    pattern30(4)
+}
+```
+</TabItem>
+</Tabs>
+
+## Output
+
+```kt
+
+4 4 4 4 4 4 4 
+4 3 3 3 3 3 4 
+4 3 2 2 2 3 4 
+4 3 2 1 2 3 4 
+4 3 2 2 2 3 4 
+4 3 3 3 3 3 4 
+4 4 4 4 4 4 4 
+
+```
