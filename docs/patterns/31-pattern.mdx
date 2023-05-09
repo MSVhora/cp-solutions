@@ -1,0 +1,91 @@
+---
+id: "pattern-31"
+title: "Pattern 31"
+description: "Print given alphabetical pattern."
+tags: [patterns, loops]
+---
+
+
+
+# Pattern 31
+
+## Problem Link
+
+https://github.com/kunal-kushwaha/DSA-Bootcamp-Java/blob/main/assignments/09-patterns.md
+
+## Problem Statement
+
+Print the given pattern.
+
+```text
+
+E 
+D E 
+C D E 
+B C D E 
+A B C D E 
+
+```
+## Approach
+
+- In the given pattern, we can see there are **n** rows and **n** columns.
+- From the given pattern, we can deduce another number pattern as shown in below table
+- In the number pattern, we can deduce that on each row, **rowIndex** numbers of columns are printed. And value of the columns are traversing from **n - rowIndex + 1** to **n**
+- On adding the above number with 'A' - 1, we can get our required pattern
+
+<TableWrapper rows="5" cols="5">
+
+|   	| 1 	| 2 	| 3 	| 4 	| 5 	|
+|:-:	|:-:	|:-:	|:-:	|:-:	|:-:	|
+| 1 	| E 	|   	|   	|   	|   	|
+| 2 	| D 	| E 	|   	|   	|   	|
+| 3 	| C 	| D 	| E 	|   	|   	|
+| 4 	| B 	| C 	| D 	| E 	|   	|
+| 5 	| A 	| B 	| C 	| D 	| E 	|
+
+</TableWrapper>
+
+<TableWrapper rows="5" cols="5">
+
+|   	| 1 	| 2 	| 3 	| 4 	| 5 	|
+|:-:	|:-:	|:-:	|:-:	|:-:	|:-:	|
+| 1 	| 5 	|   	|   	|   	|   	|
+| 2 	| 4 	| 5 	|   	|   	|   	|
+| 3 	| 3 	| 4 	| 5 	|   	|   	|
+| 4 	| 2 	| 3 	| 4 	| 5 	|   	|
+| 5 	| 1 	| 2 	| 3 	| 4 	| 5 	|
+
+</TableWrapper>
+
+<Tabs>
+<TabItem value="kotlin" label="Kotlin">
+<SolutionAuthor name="@msvhora"/>
+
+```kt
+fun pattern31(n: Int) {
+    for(rowIndex in 1..n) {
+        for(colIndex in (n - rowIndex + 1)..n) {
+            print("${'A' + colIndex - 1} ")
+        }
+        println()
+    }
+}
+
+fun main() {	
+    pattern31(5)
+}
+```
+</TabItem>
+</Tabs>
+
+## Output
+
+```kt
+
+E 
+D E 
+C D E 
+B C D E 
+A B C D E 
+
+```
