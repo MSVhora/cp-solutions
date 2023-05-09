@@ -1,0 +1,114 @@
+---
+id: "pattern-18"
+title: "Pattern 18"
+description: "Print given * pattern."
+tags: [patterns, loops]
+---
+
+
+
+# Pattern 18
+
+## Problem Link
+
+https://github.com/kunal-kushwaha/DSA-Bootcamp-Java/blob/main/assignments/09-patterns.md
+
+## Problem Statement
+
+Print the given pattern.
+
+```text
+
+**********
+****  ****
+***    ***
+**      **
+*        *
+*        *
+**      **
+***    ***
+****  ****
+**********
+
+```
+## Approach
+
+- In the given pattern, we can see there are **2n** rows and **2n** columns.
+- For columns, if **rowIndex <= n** then
+  - print **n - rowIndex + 1** columns
+  - print **rowIndex - 1** spaces in between 
+  - print **rowIndex - 1** spaces in between 
+  - print **n - rowIndex + 1** columns
+- else
+  - print **rowIndex - n** columns
+  - print **n + n - rowIndex** spaces in between 
+  - print **n + n - rowIndex** spaces in between 
+  - print **rowIndex - n** columns
+- Examples: 
+  - For **rowIndex = 2**,
+```kt
+noOfCols = n - rowIndex + 1 = 5 - 2 + 1 = 4
+noOfSpaces = rowIndex - 1 = 2 - 1 = 1
+```
+  - For **rowIndex = 8**,
+```kt
+noOfCols = rowIndex - n = 8 - 5 = 3
+noOfSpaces = n + n - rowIndex = 5 + 5 - 8 = 2
+```
+
+<TableWrapper rows="2n = 10" cols="2n = 10">
+
+|    	| 1 	| 2 	| 3 	| 4 	| 5 	| 6 	| 7 	| 8 	| 9 	| 10 	|
+|:--:	|:-:	|:-:	|:-:	|:-:	|:-:	|:-:	|:-:	|:-:	|:-:	|:--:	|
+|  1 	| * 	| * 	| * 	| * 	| * 	| * 	| * 	| * 	| * 	|  * 	|
+|  2 	| * 	| * 	| * 	| * 	|   	|   	| * 	| * 	| * 	|  * 	|
+|  3 	| * 	| * 	| * 	|   	|   	|   	|   	| * 	| * 	|  * 	|
+|  4 	| * 	| * 	|   	|   	|   	|   	|   	|   	| * 	|  * 	|
+|  5 	| * 	|   	|   	|   	|   	|   	|   	|   	|   	|  * 	|
+|  6 	| * 	|   	|   	|   	|   	|   	|   	|   	|   	|  * 	|
+|  7 	| * 	| * 	|   	|   	|   	|   	|   	|   	| * 	|  * 	|
+|  8 	| * 	| * 	| * 	|   	|   	|   	|   	| * 	| * 	|  * 	|
+|  9 	| * 	| * 	| * 	| * 	|   	|   	| * 	| * 	| * 	|  * 	|
+| 10 	| * 	| * 	| * 	| * 	| * 	| * 	| * 	| * 	| * 	|  * 	|
+
+</TableWrapper>
+
+<Tabs>
+<TabItem value="kotlin" label="Kotlin">
+<SolutionAuthor name="@msvhora"/>
+
+```kt
+fun pattern18(n: Int) {
+    for(rowIndex in 1..(n + n)) {
+		val noOfCols = if(rowIndex <= n) n - rowIndex + 1 else rowIndex - n
+        val noOfSpaces = if(rowIndex <= n) (rowIndex - 1) else (n + n - rowIndex)
+        print("*".repeat(noOfCols))
+        print(" ".repeat(noOfSpaces * 2))
+        print("*".repeat(noOfCols))
+        println()
+    }
+}
+
+fun main() {	
+    pattern18(5)
+}
+```
+</TabItem>
+</Tabs>
+
+## Output
+
+```kt
+
+**********
+****  ****
+***    ***
+**      **
+*        *
+*        *
+**      **
+***    ***
+****  ****
+**********
+
+```
