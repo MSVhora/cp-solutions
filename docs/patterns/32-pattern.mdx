@@ -1,0 +1,82 @@
+---
+id: "pattern-32"
+title: "Pattern 32"
+description: "Print given * pattern."
+tags: [patterns, loops]
+---
+
+
+
+# Pattern 32
+
+## Problem Link
+
+https://github.com/kunal-kushwaha/DSA-Bootcamp-Java/blob/main/assignments/09-patterns.md
+
+## Problem Statement
+
+Print the given pattern.
+
+```text
+
+a 
+B c 
+D e F 
+g H i J 
+k L m N o 
+
+```
+## Approach
+
+- In the given pattern, we can see there are **n** rows and **n** columns.
+- In the given pattern, each row has **rowIndex** number of columns.
+- From the pattern, we can deduce, that alphabets are printed from **a** in ascending order and in alternate small and caps format.
+- So for printing character, we created variable **index**, if **index** is even then print small alphabet at **index** else print capital alphabet at **index**.
+
+<TableWrapper rows="5" cols="5">
+
+|   	| 1 	| 2 	| 3 	| 4 	| 5 	|
+|:-:	|:-:	|:-:	|:-:	|:-:	|:-:	|
+| 1 	| a 	|   	|   	|   	|   	|
+| 2 	| B 	| c 	|   	|   	|   	|
+| 3 	| D 	| e 	| F 	|   	|   	|
+| 4 	| g 	| H 	| i 	| J 	|   	|
+| 5 	| k 	| L 	| m 	| N 	| o 	|
+
+</TableWrapper>
+
+<Tabs>
+<TabItem value="kotlin" label="Kotlin">
+<SolutionAuthor name="@msvhora"/>
+
+```kt
+fun pattern32(n: Int) {
+    var index = 0
+    for(rowIndex in 1..n) {
+        for(colIndex in 1..rowIndex) {
+            val charValue = if(index % 2 == 0) 'a' + index else 'A' + index
+            index++
+            print("$charValue ")
+        }
+        println()
+    }
+}
+
+fun main() {	
+    pattern32(5)
+}
+```
+</TabItem>
+</Tabs>
+
+## Output
+
+```kt
+
+a 
+B c 
+D e F 
+g H i J 
+k L m N o 
+
+```
