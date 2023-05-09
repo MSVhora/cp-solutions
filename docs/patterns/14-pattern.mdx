@@ -1,13 +1,13 @@
 ---
-id: "pattern-13"
-title: "Pattern 13"
+id: "pattern-14"
+title: "Pattern 14"
 description: "Print given * pattern."
 tags: [patterns, loops]
 ---
 
 
 
-# Pattern 13
+# Pattern 14
 
 ## Problem Link
 
@@ -19,30 +19,30 @@ Print the given patterns
 
 ```text
 
-    * 
-   * * 
-  *   * 
- *     * 
 ********* 
+ *     * 
+  *   * 
+   * * 
+    * 
 
 ```
 ## Approach
 
 - In the given pattern, we can see there are **n** rows and **2n - 1** columns.
 - We have to print some spaces before printing the **\*** characters.
-- As we can see we have to print **n - rowIndex** number of spaces.
-- For columns we have to loop from **1** to **2 * rowIndex - 1**, and print **\*** for edge index else print space.
-- Lastly for last row, we have to print all **\*** character for every column
+- As we can see we have to print **rowIndex - 1** number of spaces.
+- For columns we have to loop from **1** to **2 * (n - rowIndex + 1) - 1**, and print **\*** for edge index else print space.
+- Lastly for first row, we have to print all **\*** character for every column
 
 <TableWrapper rows="5" cols="2n - 1 = 9">
 
 |   	| 1 	| 2 	| 3 	| 4 	| 5 	| 6 	| 7 	| 8 	| 9 	|
 |:-:	|:-:	|:-:	|:-:	|:-:	|:-:	|:-:	|:-:	|:-:	|:-:	|
-| 1 	|   	|   	|   	|   	| * 	|   	|   	|   	|   	|
-| 2 	|   	|   	|   	| * 	|   	| * 	|   	|   	|   	|
+| 1 	| * 	| * 	| * 	| * 	| * 	| * 	| * 	| * 	| * 	|
+| 2 	|   	| * 	|   	|   	|   	|   	|   	| * 	|   	|
 | 3 	|   	|   	| * 	|   	|   	|   	| * 	|   	|   	|
-| 4 	|   	| * 	|   	|   	|   	|   	|   	| * 	|   	|
-| 5 	| * 	| * 	| * 	| * 	| * 	| * 	| * 	| * 	| * 	|
+| 4 	|   	|   	|   	| * 	|   	| * 	|   	|   	|   	|
+| 5 	|   	|   	|   	|   	| * 	|   	|   	|   	|   	|
 
 </TableWrapper>
 
@@ -51,14 +51,14 @@ Print the given patterns
 <SolutionAuthor name="@msvhora"/>
 
 ```kt
-fun pattern13(n: Int) {
+fun pattern14(n: Int) {
     for(rowIndex in 1..n) {
-		val noOfCols = 2 * rowIndex -1
-        val noOfSpaces = n - rowIndex
+		val noOfCols = 2 * (n - rowIndex + 1) -1
+        val noOfSpaces = rowIndex - 1
         print(" ".repeat(noOfSpaces))
         
         for(colIndex in 1..noOfCols) {
-            if(rowIndex == n || colIndex == 1 || colIndex == noOfCols)
+            if(rowIndex == 1 || colIndex == 1 || colIndex == noOfCols)
                 print("*")
             else
                 print(" ")
@@ -68,7 +68,7 @@ fun pattern13(n: Int) {
 }
 
 fun main() {	
-    pattern13(5)
+    pattern14(5)
 }
 ```
 </TabItem>
@@ -78,10 +78,10 @@ fun main() {
 
 ```kt
 
-    * 
-   * * 
-  *   * 
- *     * 
 ********* 
+ *     * 
+  *   * 
+   * * 
+    * 
 
 ```
