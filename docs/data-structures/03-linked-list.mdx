@@ -1,0 +1,184 @@
+---
+id: "linked-list"
+title: "Linked List"
+description: ""
+tags: [linked-list]
+---
+
+
+# Linked List
+
+## What is a Linked List?
+
+**Linked List** is a linear data structure, in which elements are not stored at a contiguous location, rather they are linked using **pointers**. Linked List forms a series of connected nodes, where each node stores the data and the address of the next node.
+
+## Types of Linked List
+
+### Single Linked List
+
+In a singly linked list, each node contains a reference to the next node in the sequence. Traversing a singly linked list is done in a forward direction.
+
+![Single Linked List](/img/data-structures/linked-list/1.png)
+
+### Double Linked List
+
+In a doubly linked list, each node contains references to both the next and previous nodes. This allows for traversal in both forward and backward directions, but it requires additional memory for the backward reference.
+
+![Double Linked List](/img/data-structures/linked-list/2.png)
+
+### Circular Linked List
+
+ In a circular linked list, the last node points back to the head node, creating a circular structure. It can be either singly or doubly linked.
+
+![Double Linked List](/img/data-structures/linked-list/3.png)
+
+## Custom Implementation
+
+<Tabs>
+<TabItem value="kotlin" label="Kotlin">
+<SolutionAuthor name="@msvhora"/>
+
+```kt
+class LinkedList<T> {
+    data class Node<R>(
+        val value: R,
+        var next: Node<R>? = null
+    ) {
+        override fun toString(): String {
+            return if(next != null) {
+                "$value -> ${next.toString()}"
+            } else {
+                "$value"
+            }
+        }
+    }
+
+    private var head: Node<T>? = null
+    private var tail: Node<T>? = null
+    private var size = 0
+
+    fun isEmpty() = size == 0
+
+    override fun toString() = 
+        if(isEmpty())
+            "Empty List"
+        else 
+            head.toString()
+
+    fun addFirst(value: T) {
+        head = Node(
+            value = value,
+            next = head
+        )
+
+        if(tail == null) {
+            tail = head
+        }
+        size++
+    }
+
+    fun addLast(value: T) {
+        if(tail == null) {
+            tail = Node(value)
+            head = tail
+        } else {
+            tail?.next = Node(value)
+            tail = tail?.next
+        }
+
+        size++
+    }
+
+    fun first() = head?.value
+
+    fun last() = tail?.value
+
+    fun removeFirst(): T? {
+        if(head == null) {
+            return null
+        }
+
+        size--
+        val value = head?.value
+        head = head?.next
+
+        if(isEmpty()) {
+            tail = null
+        }
+
+        return value
+    }
+
+    fun removeLast(): T? {
+        if(head == null) {
+            return null
+        }
+
+        size--
+        var prev: Node<T>? = null
+        var cur = head
+
+        while(cur?.next != null) {
+            prev = cur
+            cur = cur.next
+        }
+
+        if(prev == null) {
+            head = null
+            tail = null
+        } else {
+            prev.next = null
+            tail = prev
+        }
+
+        return cur?.value
+    }
+}
+```
+</TabItem>
+</Tabs>
+
+## Library LinkedList and its common methods
+
+<Tabs>
+<TabItem value="kotlin" label="Kotlin">
+<SolutionAuthor name="@msvhora"/>
+
+```kt
+import java.util.LinkedList
+
+fun main(args: Array<String>)
+{
+    // Initialize LinkedList
+    var planets =  LinkedList<String>();
+
+    // Append elements to linked list
+    planets.addAll(
+        listOf(
+            "Venus", 
+            "Earth", 
+            "Mars"
+        )
+    )
+
+    // Insert at beginning
+    planets.addFirst("Mercury")
+    
+    // Insert at end
+    planets.addLast("Jupiter") or planets.add("Jupiter")
+    
+    // Remove from beginning
+    planets.removeFirst()
+
+    // Remove from end
+    planets.removeLast()
+
+    // Check head
+    planets.getFirst() // Empty list throws NoSuchElementException
+
+    // Check tail
+    planets.getLast()
+}
+```
+</TabItem>
+</Tabs>
