@@ -10,9 +10,7 @@ tags: [array]
 
 ## What is an Array?
 
-```text
-An array is a collection of items of the same variable type that are stored at contiguous memory locations. It’s one of the most popular and simple data structures and is often used to implement other data structures. Each item in an array is indexed starting with 0.
-```
+An **array** is a collection of items of the same variable type that are stored at contiguous memory locations. It’s one of the most popular and simple data structures and is often used to implement other data structures. Each item in an array is indexed starting with `0`.
 
 ## Declare & Initialize an array
 
@@ -39,6 +37,62 @@ var arr = doubleArrayOf()
 // Array with specific size & default value
 var arr = Array<Int>(10) { 0 } //Array<[DataType]>([size]) { [defaultValue] }
 var arr = IntArray(10) { 0 }
+```
+</TabItem>
+</Tabs>
+
+
+## Some common methods of String
+
+<Tabs>
+<TabItem value="kotlin" label="Kotlin">
+<SolutionAuthor name="@msvhora"/>
+
+```kt
+// Size of array
+arr.size
+
+// Get lastIndex
+arr.lastIndex
+
+// Binary Search
+arr.binarySearch(
+    element = 10,
+    comparator = { a,b ->
+        a - b // Return Int -1, 0, 1
+    },
+    fromIndex = 0,
+    toIndex = arr.size
+)
+
+// Find element in arr
+arr.contains(10) // Returns boolean
+
+// Distinct
+val list: List<Int> = arr.distinct() // distinctBy for selector
+
+// drop - Returns list containing all elements except first 2 elements
+arr.drop(2)
+
+// dropLast - Returns list containing all elements except last 2 elements
+arr.dropLast(2)
+
+// dropWhile - Drops first n elements based on predicate condition
+arr.dropWhile { it == 1 }
+
+// Filter - Filter array based on predicate condition
+arr.filter {
+    it % 2 == 0
+}
+
+// Convert array to string
+arr.joinToString()
+
+// Sort array inplace
+arr.sort()
+
+// Return sorted array 
+arr.sorted()
 ```
 </TabItem>
 </Tabs>

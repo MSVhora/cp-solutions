@@ -1,0 +1,55 @@
+---
+id: "string"
+title: "String"
+description: ""
+tags: [string]
+---
+
+
+# String
+
+## What is a String?
+
+The **String** class represents character strings. All string literals in Kotlin programs, such as `"abc"`, are implemented as instances of this class.
+
+## Some common methods of String
+
+<Tabs>
+<TabItem value="kotlin" label="Kotlin">
+<SolutionAuthor name="@msvhora"/>
+
+```kt
+// Declare & initialize a String
+var str = ""
+
+// Length of String
+str.length
+
+// Get character at specific index
+str.get(0) or str[0]
+
+// Concat a string
+str = str + "hello"
+
+// Retrive part of string (substring)
+val sunStr: String = str.substring(1..3) // substring(range: IntRange)
+
+// Split the string based on delimeter
+var strList: List<String> = str.split(",")
+
+// Split the string based on size
+var strList: List<String> = str.chunked(2)
+
+// Uppercase String
+str.uppercase()
+
+// Lowercase String
+str.lowercase()
+
+// Check substring
+str.contains("hello")
+
+
+```
+</TabItem>
+</Tabs>
