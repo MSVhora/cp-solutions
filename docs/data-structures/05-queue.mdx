@@ -1,0 +1,57 @@
+---
+id: "queue"
+title: "Queue"
+description: ""
+tags: [queue]
+---
+
+## What is a Queue?
+
+A **Queue** is defined as a linear data structure that is open at both ends and the operations are performed in First In First Out (FIFO) order.
+
+### FIFO( First In First Out )
+
+- A Queue is like a line waiting to purchase tickets, where the first person in line is the first person served. (i.e. First come first serve).
+- Position of the entry in a queue ready to be served, that is, the first entry that will be removed from the queue, is called the front of the queue(sometimes, head of the queue), similarly, the position of the last entry in the queue, that is, the one most recently added, is called the rear (or the tail) of the queue. See the below figure.
+
+![Queue](/img/data-structures/queue/1.png)
+
+## Common methods
+
+<Tabs>
+<TabItem value="kotlin" label="Kotlin">
+<SolutionAuthor name="@msvhora"/>
+
+```kt
+import java.util.ArrayDeque
+
+fun main(args: Array<String>)
+{
+    // Initialize Queue
+    val queue =  ArrayDeque<Int>();
+
+    // Enqueue operation
+    queue.addLast(1)
+    queue.addLast(2)
+    queue.addLast(3)
+    queue.addLast(4)
+
+    // Dequeue operation
+    val removedElement = queue.removeFirst() // throws exception if queue empty
+    val removedElement = queue.removeFirstOrNull() // Wont throw exception if empty
+
+    // Peek operation
+    val frontElement = queue.first()
+    val frontElement = queue.firstOrNull()
+
+    // Size
+    queue.size
+
+    // Check empty
+    queue.isEmpty()
+}
+
+```
+
+</TabItem>
+</Tabs>
