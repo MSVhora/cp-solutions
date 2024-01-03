@@ -1,0 +1,56 @@
+---
+id: "stack"
+title: "Stack"
+description: ""
+tags: [stack]
+---
+
+## What is a Stack?
+
+A **stack** is a linear data structure in which the insertion of a new element and removal of an existing element takes place at the same end represented as the top of the stack.
+
+### LIFO( Last In First Out )
+
+This strategy states that the element that is inserted last will come out first. You can take a pile of plates kept on top of each other as a real-life example. The plate which we put last is on the top and since we remove the plate that is at the top, we can say that the plate that was put last comes out first.
+
+![Stack](/img/data-structures/stack/1.png)
+
+## Common methods
+
+<Tabs>
+<TabItem value="kotlin" label="Kotlin">
+<SolutionAuthor name="@msvhora"/>
+
+```kt
+import java.util.ArrayDeque
+
+fun main(args: Array<String>)
+{
+    // Initialize Stack
+    val stack =  ArrayDeque<Int>();
+
+    // Push operation
+    stack.addFirst(1)
+    stack.addFirst(2)
+    stack.addFirst(3)
+    stack.addFirst(4)
+
+    // Pop operation
+    val poppedElement = stack.removeFirst() // throws exception if stack empty
+    val poppedElement = stack.removeFirstOrNull() // Wont throw exception if empty
+
+    // Peek operation
+    val topElement = stack.first()
+    val topElement = stack.firstOrNull()
+
+    // Size
+    stack.size
+
+    // Check empty
+    stack.isEmpty()
+}
+
+```
+
+</TabItem>
+</Tabs>
