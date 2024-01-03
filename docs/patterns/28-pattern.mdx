@@ -5,13 +5,9 @@ description: "Print given * pattern."
 tags: [patterns, loops]
 ---
 
-
-
-# Pattern 28
-
 ## Problem Link
 
-https://github.com/kunal-kushwaha/DSA-Bootcamp-Java/blob/main/assignments/09-patterns.md
+[Visit the problem](https://github.com/kunal-kushwaha/DSA-Bootcamp-Java/blob/main/assignments/09-patterns.md)
 
 ## Problem Statement
 
@@ -30,6 +26,7 @@ Print the given pattern.
     * 
 
 ```
+
 ## Approach
 
 - In the given pattern, we can see there are **2n - 1** rows and **n** columns.
@@ -40,17 +37,17 @@ Print the given pattern.
 
 <TableWrapper rows="2n - 1 = 9" cols="5">
 
-|   	| 1 	| 2 	| 3 	| 4 	| 5 	| 6 	| 7 	| 8 	| 9 	|
-|:-:	|:-:	|:-:	|:-:	|:-:	|:-:	|:-:	|:-:	|:-:	|:-:	|
-| 1 	|   	|   	|   	|   	| * 	|   	|   	|   	|   	|
-| 2 	|   	|   	|   	| * 	|   	| * 	|   	|   	|   	|
-| 3 	|   	|   	| * 	|   	| * 	|   	| * 	|   	|   	|
-| 4 	|   	| * 	|   	| * 	|   	| * 	|   	| * 	|   	|
-| 5 	| * 	|   	| * 	|   	| * 	|   	| * 	|   	| * 	|
-| 6 	|   	| * 	|   	| * 	|   	| * 	|   	| * 	|   	|
-| 7 	|   	|   	| * 	|   	| * 	|   	| * 	|   	|   	|
-| 8 	|   	|   	|   	| * 	|   	| * 	|   	|   	|   	|
-| 9 	|   	|   	|   	|   	| * 	|   	|   	|   	|   	|
+|       |   1   |   2   |   3   |   4   |   5   |   6   |   7   |   8   |   9   |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+|   1   |       |       |       |       |   *   |       |       |       |       |
+|   2   |       |       |       |   *   |       |   *   |       |       |       |
+|   3   |       |       |   *   |       |   *   |       |   *   |       |       |
+|   4   |       |   *   |       |   *   |       |   *   |       |   *   |       |
+|   5   |   *   |       |   *   |       |   *   |       |   *   |       |   *   |
+|   6   |       |   *   |       |   *   |       |   *   |       |   *   |       |
+|   7   |       |       |   *   |       |   *   |       |   *   |       |       |
+|   8   |       |       |       |   *   |       |   *   |       |       |       |
+|   9   |       |       |       |       |   *   |       |       |       |       |
 
 </TableWrapper>
 
@@ -61,7 +58,7 @@ Print the given pattern.
 ```kt
 fun pattern28(n: Int) {
     for(rowIndex in 1..(n+n)) {
-		val noOfCols = if(rowIndex <= n) rowIndex else n + n - rowIndex
+        val noOfCols = if(rowIndex <= n) rowIndex else n + n - rowIndex
         val noOfSpaces = (n - noOfCols)
         print(" ".repeat(noOfSpaces))
         print("* ".repeat(noOfCols))
@@ -70,10 +67,12 @@ fun pattern28(n: Int) {
 }
 
 
-fun main() {	
+fun main() {    
     pattern28(5)
 }
+
 ```
+
 </TabItem>
 </Tabs>
 

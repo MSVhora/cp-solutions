@@ -5,13 +5,9 @@ description: "Print given * pattern."
 tags: [patterns, loops]
 ---
 
-
-
-# Pattern 11
-
 ## Problem Link
 
-https://github.com/kunal-kushwaha/DSA-Bootcamp-Java/blob/main/assignments/09-patterns.md
+[Visit the problem](https://github.com/kunal-kushwaha/DSA-Bootcamp-Java/blob/main/assignments/09-patterns.md)
 
 ## Problem Statement
 
@@ -26,22 +22,23 @@ Print the given pattern.
     * 
 
 ```
+
 ## Approach
 
 - In the given pattern, we can see there are **n** rows and **n** columns.
 - We have to print some spaces before printing the **\*** characters.
-- As we can see we have to print **rowIndex - 1** number of spaces and **n - rowIndex + 1** number of columns. 
+- As we can see we have to print **rowIndex - 1** number of spaces and **n - rowIndex + 1** number of columns.
 - We also have to print an extra space between character, so while printing character we will print a space as well.
 
 <TableWrapper rows="5" cols="5">
 
-|   	| 1 	| 2 	| 3 	| 4 	| 5 	| 6 	| 7 	| 8 	| 9 	|
-|:-:	|:-:	|:-:	|:-:	|:-:	|:-:	|:-:	|:-:	|:-:	|:-:	|
-| 1 	| * 	|   	| * 	|   	| * 	|   	| * 	|   	| * 	|
-| 2 	|   	| * 	|   	| * 	|   	| * 	|   	| * 	|   	|
-| 3 	|   	|   	| * 	|   	| * 	|   	| * 	|   	|   	|
-| 4 	|   	|   	|   	| * 	|   	| * 	|   	|   	|   	|
-| 5 	|   	|   	|   	|   	| * 	|   	|   	|   	|   	|
+|       |   1   |   2   |   3   |   4   |   5   |   6   |   7   |   8   |   9   |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+|   1   |   *   |       |   *   |       |   *   |       |   *   |       |   *   |
+|   2   |       |   *   |       |   *   |       |   *   |       |   *   |       |
+|   3   |       |       |   *   |       |   *   |       |   *   |       |       |
+|   4   |       |       |       |   *   |       |   *   |       |       |       |
+|   5   |       |       |       |       |   *   |       |       |       |       |
 
 </TableWrapper>
 
@@ -52,7 +49,7 @@ Print the given pattern.
 ```kt
 fun pattern11(n: Int) {
     for(rowIndex in 1..n) {
-		val noOfCols = n - rowIndex + 1
+        val noOfCols = n - rowIndex + 1
         val noOfSpaces = rowIndex - 1
         print(" ".repeat(noOfSpaces))
         print("* ".repeat(noOfCols))
@@ -60,10 +57,12 @@ fun pattern11(n: Int) {
     }
 }
 
-fun main() {	
+fun main() {    
     pattern11(5)
 }
+
 ```
+
 </TabItem>
 </Tabs>
 

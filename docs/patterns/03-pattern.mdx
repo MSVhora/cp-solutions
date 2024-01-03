@@ -5,13 +5,9 @@ description: "Print given * pattern."
 tags: [patterns, loops]
 ---
 
-
-
-# Pattern 3
-
 ## Problem Link
 
-https://github.com/kunal-kushwaha/DSA-Bootcamp-Java/blob/main/assignments/09-patterns.md
+[Visit the problem](https://github.com/kunal-kushwaha/DSA-Bootcamp-Java/blob/main/assignments/09-patterns.md)
 
 ## Problem Statement
 
@@ -26,6 +22,7 @@ Print the given pattern.
 *
 
 ```
+
 ## Approach
 
 - Find how many rows are there and how they are printed, that will define the outer loop
@@ -34,13 +31,13 @@ Print the given pattern.
 
 <TableWrapper rows="5" cols="5">
 
-|   	| 1 	| 2 	| 3 	| 4 	| 5 	|
-|:-:	|:-:	|:-:	|:-:	|:-:	|:-:	|
-| 1 	| * 	| * 	| * 	| * 	| * 	|
-| 2 	| * 	| * 	| * 	| * 	|   	|
-| 3 	| * 	| * 	| * 	|   	|   	|
-| 4 	| * 	| * 	|   	|   	|   	|
-| 5 	| * 	|   	|   	|   	|   	|
+|       |   1   |   2   |   3   |   4   |   5   |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+|   1   |   *   |   *   |   *   |   *   |   *   |
+|   2   |   *   |   *   |   *   |   *   |       |
+|   3   |   *   |   *   |   *   |       |       |
+|   4   |   *   |   *   |       |       |       |
+|   5   |   *   |       |       |       |       |
 
 </TableWrapper>
 
@@ -54,16 +51,18 @@ Print the given pattern.
 ```kt
 fun pattern3(n: Int) {
     for(rowIndex in 1..n) {
-		val noOfCols = n - rowIndex + 1
+        val noOfCols = n - rowIndex + 1
         print("*".repeat(noOfCols))
         println()
     }
 }
 
-fun main() {	
+fun main() {    
     pattern3(5)
 }
+
 ```
+
 </TabItem>
 </Tabs>
 

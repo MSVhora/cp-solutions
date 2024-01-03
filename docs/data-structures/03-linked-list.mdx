@@ -5,9 +5,6 @@ description: ""
 tags: [linked-list]
 ---
 
-
-# Linked List
-
 ## What is a Linked List?
 
 **Linked List** is a linear data structure, in which elements are not stored at a contiguous location, rather they are linked using **pointers**. Linked List forms a series of connected nodes, where each node stores the data and the address of the next node.
@@ -134,7 +131,9 @@ class LinkedList<T> {
         return cur?.value
     }
 }
+
 ```
+
 </TabItem>
 </Tabs>
 
@@ -150,7 +149,7 @@ import java.util.LinkedList
 fun main(args: Array<String>)
 {
     // Initialize LinkedList
-    var planets =  LinkedList<String>();
+    val planets =  LinkedList<String>();
 
     // Append elements to linked list
     planets.addAll(
@@ -179,6 +178,8 @@ fun main(args: Array<String>)
     // Check tail
     planets.getLast()
 }
+
 ```
+
 </TabItem>
 </Tabs>

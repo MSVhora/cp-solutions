@@ -1,8 +1,8 @@
 {
-  "label": "Patterns",
-  "position": 2,
-  "link": {
-    "type": "generated-index",
-    "description": "Learn all pattern concepts."
-  }
+	"label": "Patterns",
+	"position": 2,
+	"link": {
+		"type": "generated-index",
+		"description": "Learn all pattern concepts."
+	}
 }

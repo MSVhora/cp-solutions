@@ -5,13 +5,9 @@ description: "Print given * pattern."
 tags: [patterns, loops]
 ---
 
-
-
-# Pattern 7
-
 ## Problem Link
 
-https://github.com/kunal-kushwaha/DSA-Bootcamp-Java/blob/main/assignments/09-patterns.md
+[Visit the problem](https://github.com/kunal-kushwaha/DSA-Bootcamp-Java/blob/main/assignments/09-patterns.md)
 
 ## Problem Statement
 
@@ -26,12 +22,14 @@ Print the given pattern.
     *
 
 ```
+
 ## Approach
 
 - In the given pattern, we can see there are **n** rows and **n** columns.
 - We have to print some spaces before printing the **\*** characters.
-- As we can see we have to print **rowIndex - 1** number of spaces and **n - rowIndex + 1** number of columns 
-- For example: for **rowIndex = 2**, we can see we have to print **1** spaces and **4** columns. 
+- As we can see we have to print **rowIndex - 1** number of spaces and **n - rowIndex + 1** number of columns.
+- For example: for **rowIndex = 2**, we can see we have to print **1** spaces and **4** columns.
+
 ```kt
 noOfSpaces = rowIndex - 1 = 2 - 1 = 1
 noOfCols = n - rowIndex + 1 = 5 - 2 + 1 = 4
@@ -39,13 +37,13 @@ noOfCols = n - rowIndex + 1 = 5 - 2 + 1 = 4
 
 <TableWrapper rows="5" cols="5">
 
-|   	| 1 	| 2 	| 3 	| 4 	| 5 	|
-|:-:	|:-:	|:-:	|:-:	|:-:	|:-:	|
-| 1 	| * 	| * 	| * 	| * 	| * 	|
-| 2 	|   	| * 	| * 	| * 	| * 	|
-| 3 	|   	|   	| * 	| * 	| * 	|
-| 4 	|   	|   	|   	| * 	| * 	|
-| 5 	|   	|   	|   	|   	| * 	|
+|       |   1   |   2   |   3   |   4   |   5   |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+|   1   |   *   |   *   |   *   |   *   |   *   |
+|   2   |       |   *   |   *   |   *   |   *   |
+|   3   |       |       |   *   |   *   |   *   |
+|   4   |       |       |       |   *   |   *   |
+|   5   |       |       |       |       |   *   |
 
 </TableWrapper>
 
@@ -56,7 +54,7 @@ noOfCols = n - rowIndex + 1 = 5 - 2 + 1 = 4
 ```kt
 fun pattern7(n: Int) {
     for(rowIndex in 1..n) {
-		val noOfCols = n - rowIndex + 1
+        val noOfCols = n - rowIndex + 1
         val noOfSpaces = rowIndex - 1
         print(" ".repeat(noOfSpaces))
         print("*".repeat(noOfCols))
@@ -64,10 +62,12 @@ fun pattern7(n: Int) {
     }
 }
 
-fun main() {	
+fun main() {    
     pattern7(5)
 }
+
 ```
+
 </TabItem>
 </Tabs>
 

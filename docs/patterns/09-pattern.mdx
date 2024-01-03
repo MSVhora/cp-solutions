@@ -5,13 +5,9 @@ description: "Print given * pattern."
 tags: [patterns, loops]
 ---
 
-
-
-# Pattern 9
-
 ## Problem Link
 
-https://github.com/kunal-kushwaha/DSA-Bootcamp-Java/blob/main/assignments/09-patterns.md
+[Visit the problem](https://github.com/kunal-kushwaha/DSA-Bootcamp-Java/blob/main/assignments/09-patterns.md)
 
 ## Problem Statement
 
@@ -26,12 +22,14 @@ Print the given pattern.
     *
 
 ```
+
 ## Approach
 
 - In the given pattern, we can see there are **n** rows and **2n - 1** columns.
 - We have to print some spaces before printing the **\*** characters.
-- As we can see we have to print **rowIndex - 1** number of spaces and **2 * (n - rowIndex + 1) - 1** number of columns 
-- For example: for **rowIndex = 2**, we can see we have to print **1** spaces and **7** columns. 
+- As we can see we have to print **rowIndex - 1** number of spaces and **2 * (n - rowIndex + 1) - 1** number of columns.
+- For example: for **rowIndex = 2**, we can see we have to print **1** spaces and **7** columns.
+
 ```kt
 noOfSpaces = rowIndex - 1 = 2 - 1 = 1
 noOfCols = 2 * (n - rowIndex + 1) - 1 = 2 * (5 - 2 + 1) - 1 = 7
@@ -39,13 +37,13 @@ noOfCols = 2 * (n - rowIndex + 1) - 1 = 2 * (5 - 2 + 1) - 1 = 7
 
 <TableWrapper rows="5" cols="2n - 1 = 9">
 
-|   	| 1 	| 2 	| 3 	| 4 	| 5 	| 6 	| 7 	| 8 	| 9 	|
-|:-:	|:-:	|:-:	|:-:	|:-:	|:-:	|:-:	|:-:	|:-:	|:-:	|
-| 1 	| * 	| * 	| * 	| * 	| * 	| * 	| * 	| * 	| * 	|
-| 2 	|   	| * 	| * 	| * 	| * 	| * 	| * 	| * 	|   	|
-| 3 	|   	|   	| * 	| * 	| * 	| * 	| * 	|   	|   	|
-| 4 	|   	|   	|   	| * 	| * 	| * 	|   	|   	|   	|
-| 5 	|   	|   	|   	|   	| * 	|   	|   	|   	|   	|
+|       |   1   |   2   |   3   |   4   |   5   |   6   |   7   |   8   |   9   |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+|   1   |   *   |   *   |   *   |   *   |   *   |   *   |   *   |   *   |   *   |
+|   2   |       |   *   |   *   |   *   |   *   |   *   |   *   |   *   |       |
+|   3   |       |       |   *   |   *   |   *   |   *   |   *   |       |       |
+|   4   |       |       |       |   *   |   *   |   *   |       |       |       |
+|   5   |       |       |       |       |   *   |       |       |       |       |
 
 </TableWrapper>
 
@@ -56,7 +54,7 @@ noOfCols = 2 * (n - rowIndex + 1) - 1 = 2 * (5 - 2 + 1) - 1 = 7
 ```kt
 fun pattern9(n: Int) {
     for(rowIndex in 1..n) {
-		val noOfCols = 2 * (n - rowIndex + 1) - 1
+        val noOfCols = 2 * (n - rowIndex + 1) - 1
         val noOfSpaces = rowIndex - 1
         print(" ".repeat(noOfSpaces))
         print("*".repeat(noOfCols))
@@ -64,10 +62,12 @@ fun pattern9(n: Int) {
     }
 }
 
-fun main() {	
+fun main() {    
     pattern9(5)
 }
+
 ```
+
 </TabItem>
 </Tabs>
 

@@ -5,13 +5,9 @@ description: "Print given * pattern."
 tags: [patterns, loops]
 ---
 
-
-
-# Pattern 24
-
 ## Problem Link
 
-https://github.com/kunal-kushwaha/DSA-Bootcamp-Java/blob/main/assignments/09-patterns.md
+[Visit the problem](https://github.com/kunal-kushwaha/DSA-Bootcamp-Java/blob/main/assignments/09-patterns.md)
 
 ## Problem Statement
 
@@ -30,26 +26,30 @@ Print the given pattern.
 **      **
 *        *
 ```
+
 ## Approach
 
 - In the given pattern, we can see there are **2n** rows and **2n** columns.
 - For columns, if **rowIndex <= n** then
   - Traverse from **1** to **rowIndex** and print * on only edge indices.
-  - print **n - rowIndex** spaces in between 
+  - print **n - rowIndex** spaces in between
   - print **n - rowIndex** spaces in between
   - Traverse from **1** to **rowIndex** and print * on only edge indices.
 - else
   - Traverse from **1** to **2n - rowIndex + 1** and print * on only edge indices.
-  - print **rowIndex - n - 1** spaces in between 
-  - print **rowIndex - n - 1** spaces in between 
+  - print **rowIndex - n - 1** spaces in between
+  - print **rowIndex - n - 1** spaces in between
   - Traverse from **1** to **2n - rowIndex + 1** and print * on only edge indices.
-- Examples: 
+- Examples:
   - For **rowIndex = 2**,
+  
     ```kt
     noOfCols = rowIndex = 2
     noOfSpaces = n - rowIndex = 5 - 2 = 3
     ```
+
   - For **rowIndex = 8**,
+  
     ```kt
     noOfCols = 2n - rowIndex + 1 = 10 - 8 + 1 = 3
     noOfSpaces = rowIndex - n - 1 = 8 - 5 - 1 = 2
@@ -57,18 +57,18 @@ Print the given pattern.
 
 <TableWrapper rows="2n = 10" cols="2n = 10">
 
-|    	| 1 	| 2 	| 3 	| 4 	| 5 	| 6 	| 7 	| 8 	| 9 	| 10 	|
-|:--:	|:-:	|:-:	|:-:	|:-:	|:-:	|:-:	|:-:	|:-:	|:-:	|:--:	|
-|  1 	| * 	|   	|   	|   	|   	|   	|   	|   	|   	|  * 	|
-|  2 	| * 	| * 	|   	|   	|   	|   	|   	|   	| * 	|  * 	|
-|  3 	| * 	|   	| * 	|   	|   	|   	|   	| * 	|   	|  * 	|
-|  4 	| * 	|   	|   	| * 	|   	|   	| * 	|   	|   	|  * 	|
-|  5 	| * 	|   	|   	|   	| * 	| * 	|   	|   	|   	|  * 	|
-|  6 	| * 	|   	|   	|   	| * 	| * 	|   	|   	|   	|  * 	|
-|  7 	| * 	|   	|   	| * 	|   	|   	| * 	|   	|   	|  * 	|
-|  8 	| * 	|   	| * 	|   	|   	|   	|   	| * 	|   	|  * 	|
-|  9 	| * 	| * 	|   	|   	|   	|   	|   	|   	| * 	|  * 	|
-| 10 	| * 	|   	|   	|   	|   	|   	|   	|   	|   	|  * 	|
+|       |   1   |   2   |   3   |   4   |   5   |   6   |   7   |   8   |   9   |  10   |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+|   1   |   *   |       |       |       |       |       |       |       |       |   *   |
+|   2   |   *   |   *   |       |       |       |       |       |       |   *   |   *   |
+|   3   |   *   |       |   *   |       |       |       |       |   *   |       |   *   |
+|   4   |   *   |       |       |   *   |       |       |   *   |       |       |   *   |
+|   5   |   *   |       |       |       |   *   |   *   |       |       |       |   *   |
+|   6   |   *   |       |       |       |   *   |   *   |       |       |       |   *   |
+|   7   |   *   |       |       |   *   |       |       |   *   |       |       |   *   |
+|   8   |   *   |       |   *   |       |       |       |       |   *   |       |   *   |
+|   9   |   *   |   *   |       |       |       |       |       |       |   *   |   *   |
+|  10   |   *   |       |       |       |       |       |       |       |       |   *   |
 
 </TableWrapper>
 
@@ -108,7 +108,9 @@ fun pattern24(n: Int) {
 fun main() {    
     pattern24(5)
 }
+
 ```
+
 </TabItem>
 </Tabs>
 
