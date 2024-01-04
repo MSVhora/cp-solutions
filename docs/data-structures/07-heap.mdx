@@ -1,0 +1,196 @@
+---
+id: "heap"
+title: "Heap"
+description: ""
+tags: [heap]
+---
+
+## What is a Heap?
+
+A **Heap** is a special Tree-based Data Structure in which the tree is a **complete binary tree**.
+
+### What is a Complete Binary Tree?
+
+A **complete binary tree** is a special type of binary tree where all the levels of the tree are filled completely except the lowest level nodes which are filled from as left as possible.
+
+## Types of heaps
+
+### Max-Heap
+
+In this heap, the value of the root node must be the greatest among all its child nodes and the same thing must be done for its left and right sub-tree also.
+
+### Min-Heap
+
+In this heap, the value of the root node must be the smallest among all its child nodes and the same thing must be done for its left and right sub-tree also.
+
+![Heap](/img/data-structures/heap/1.png)
+
+## Heap Operations
+
+### Heapify
+
+- It is the process to rearrange the elements to maintain the property of heap data structure. It is done when a certain node creates an imbalance in the heap due to some operations on that node.
+- It takes `O(log N)` to balance the tree.
+
+### Insertion
+
+- If we insert a new element into the heap since we are adding a new element into the heap so it will distort the properties of the heap so we need to perform the heapify operation so that it maintains the property of the heap.
+- This operation also takes `O(logN)` time.
+
+### Deletion
+
+- If we delete the element from the heap it always deletes the root element of the tree and replaces it with the last element of the tree.
+- Since we delete the root element from the heap it will distort the properties of the heap so we need to perform heapify operations so that it maintains the property of the heap.
+- It takes `O(logN)` time.
+
+## Custom Implementation
+
+<Tabs>
+<TabItem value="kotlin" label="Kotlin">
+<SolutionAuthor name="@msvhora"/>
+
+```kt
+import java.util.Collections
+
+class Heap<T>(
+        private val comparator: Comparator<in T>
+) {
+    companion object {
+        private fun parent(index: Int) = index shr 1
+        private fun left(index: Int) = index shl 1
+        private fun right(index: Int) = left(index) + 1
+    }
+
+    private val arr = mutableListOf<T>()
+    private var size = 0
+
+    private tailrec fun heapify(index: Int) {
+        val left = left(index)
+        val right = right(index)
+
+        var ordered = index
+
+        if (left < size && comparator.compare(arr[left], arr[ordered]) > 0) {
+            ordered = left
+        }
+
+        if (right < size && comparator.compare(arr[right], arr[ordered]) > 0) {
+            ordered = right
+        }
+
+        if (ordered != index) {
+            Collections.swap(arr, index, ordered)
+            heapify(ordered)
+        }
+    }
+
+    fun size() = size
+
+    fun add(value: T) {
+        if (size < arr.size) {
+            arr[size] = value
+        } else {
+            arr.add(value)
+        }
+        size++
+        var current = size - 1
+        var parent = parent(current)
+        while (parent >= 0 && comparator.compare(arr[current], arr[parent]) > 0) {
+            Collections.swap(arr, current, parent)
+            current = parent.also { parent = parent(parent) }
+        }
+    }
+
+    fun peek(): T {
+        if (size == 0)
+            throw NoSuchElementException("Heap is empty.")
+        return arr[0]
+    }
+
+    fun pop(): T {
+        if (size == 0)
+            throw NoSuchElementException("Heap is empty.")
+
+        val popped = peek()
+        arr[0] = arr[--size]
+        heapify(0)
+        return popped
+    }
+
+    override fun toString(): String {
+        return arr.joinToString(
+                separator = ", ",
+                prefix = "[",
+                postfix = "]",
+        )
+    }
+
+}
+
+fun main() {
+    val minHeap = Heap<Int> { a, b ->
+        b - a
+    }
+
+    minHeap.add(1)
+    minHeap.add(2)
+    println(minHeap.peek())
+    minHeap.add(3)
+    minHeap.add(4)
+
+    println(minHeap)
+
+    println(minHeap.pop())
+
+    println(minHeap.peek())
+
+    println(minHeap.pop())
+
+    println(minHeap.pop())
+
+    minHeap.add(5)
+    println(minHeap.peek())
+    minHeap.add(1)
+    println(minHeap.peek())
+    println(minHeap)
+    println(minHeap.size())
+
+}
+
+```
+
+</TabItem>
+</Tabs>
+
+## Library Implementation and Common Methods
+
+<Tabs>
+<TabItem value="kotlin" label="Kotlin">
+<SolutionAuthor name="@msvhora"/>
+
+```kt
+import java.util.PriorityQueue
+
+fun main() {
+    val minHeap = PriorityQueue<Int> { a, b ->
+        a - b
+    }
+    
+    // Insert
+    minHeap.add(1)
+    minHeap.add(2)
+    
+    // Peek
+    minHeap.peek()
+    
+    // Remove
+    val removedElement = minHeap.remove()
+
+    // Size
+    minHeap.size
+}
+
+```
+
+</TabItem>
+</Tabs>
