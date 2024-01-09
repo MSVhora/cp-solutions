@@ -1,0 +1,36 @@
+---
+id: "sorting"
+title: "Sorting"
+description: ""
+tags: [sort]
+---
+
+## What is a Sorting Algorithm?
+
+A Sorting Algorithm is used to rearrange a given array or list of elements according to a comparison operator on the elements. The comparison operator is used to decide the new order of elements in the respective data structure.
+
+![Sorting Algorithm](/img/algorithms/sorting/1.png)
+
+### Stability
+
+Stable sort algorithms sort equal elements in the same order that they appear in the input. Stability is important to preserve order over multiple sorts on the same data set.
+
+## Complexity Chart
+
+| Name | Best Case | Average Case | Worst Case | Memory | Stable | Method Used |
+| :- | :-: | :-: | :-: | :-: | :---: | :---: |
+| Quick Sort | ![n log n](/img/algorithms/sorting/2.png) | ![n log n](/img/algorithms/sorting/2.png) | ![n^{2}](/img/algorithms/sorting/3.png) | ![log n](/img/algorithms/sorting/4.png) | No  | Partitioning |
+| Merge Sort | ![n log n](/img/algorithms/sorting/2.png) | ![n log n](/img/algorithms/sorting/2.png) | ![n log n](/img/algorithms/sorting/2.png) | n   | Yes | Merging |
+| Heap Sort | ![n log n](/img/algorithms/sorting/2.png) | ![n log n](/img/algorithms/sorting/2.png) | ![n log n](/img/algorithms/sorting/2.png) | 1   | No  | Selection |
+| Insertion Sort | n   | ![n^{2}](/img/algorithms/sorting/3.png) | ![n^{2}](/img/algorithms/sorting/3.png) | 1   | Yes | Insertion |
+| Tim Sort | n   | ![n log n](/img/algorithms/sorting/2.png) | ![n log n](/img/algorithms/sorting/2.png) | n   | Yes | Insertion & Merging |
+| Selection Sort | ![n^{2}](/img/algorithms/sorting/3.png) | ![n^{2}](/img/algorithms/sorting/3.png) | ![n^{2}](/img/algorithms/sorting/3.png) | 1   | No  | Selection |
+| Shell Sort | ![n log n](/img/algorithms/sorting/2.png) | ![n^{4/3}](/img/algorithms/sorting/5.png) | ![n^{3/2}](/img/algorithms/sorting/6.png) | 1   | No  | Insertion |
+| Bubble Sort | n   | ![n^{2}](/img/algorithms/sorting/3.png) | ![n^{2}](/img/algorithms/sorting/3.png) | 1   | Yes | Exchanging |
+| Tree Sort | ![n log n](/img/algorithms/sorting/2.png) | ![n log n](/img/algorithms/sorting/2.png) | ![n log n](/img/algorithms/sorting/2.png) | n   | Yes | Insertion |
+| Cycle Sort | ![n^{2}](/img/algorithms/sorting/3.png) | ![n^{2}](/img/algorithms/sorting/3.png) | ![n^{2}](/img/algorithms/sorting/3.png) | 1   | No  | Selection |
+| Strand Sort | n   | ![n^{2}](/img/algorithms/sorting/3.png) | ![n^{2}](/img/algorithms/sorting/3.png) | n   | Yes | Selection |
+| Cocktail Shaker Sort | n   | ![n^{2}](/img/algorithms/sorting/3.png) | ![n^{2}](/img/algorithms/sorting/3.png) | 1   | Yes | Exchanging |
+| Comb Sort | ![n log n](/img/algorithms/sorting/2.png) | ![n^{2}](/img/algorithms/sorting/3.png) | ![n^{2}](/img/algorithms/sorting/3.png) | 1   | No  | Exchanging |
+| Gnome Sort | n   | ![n^{2}](/img/algorithms/sorting/3.png) | ![n^{2}](/img/algorithms/sorting/3.png) | 1   | Yes | Exchanging |
+| Odd–even Sort | n   | ![n^{2}](/img/algorithms/sorting/3.png) | ![n^{2}](/img/algorithms/sorting/3.png) | 1   | Yes | Exchanging |

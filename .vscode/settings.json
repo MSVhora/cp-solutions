@@ -3,5 +3,12 @@
       "MD033": {
         "allowed_elements": ["Tabs", "TabItem", "SolutionAuthor", "TableWrapper"]
       }
-    }
+    },
+    "spellright.language": [
+      "en"
+    ],
+    "spellright.documentTypes": [
+      "latex",
+      "plaintext"
+    ]
   }
